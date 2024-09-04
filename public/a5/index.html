@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Led Switch." />
+    <title>Control de LED con Particle Photon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <div class="col">
+            <label>
+                <span class="switch">
+                    <input id="Breaker1" class="switch__input" type="checkbox" role="switch">
+                    <span class="switch__surface">
+                        <span class="switch__surface-glare"></span>
+                    </span>
+                    <span class="switch__inner-shadow"></span>
+                    <span class="switch__inner">
+                        <span class="switch__inner-glare"></span>
+                    </span>
+                    <span class="switch__rocker-shadow"></span>
+                    <span class="switch__rocker-sides">
+                        <span class="switch__rocker-sides-glare"></span>
+                    </span>
+                    <span class="switch__rocker">
+                        <span class="switch__rocker-glare"></span>
+                    </span>
+                    <span class="switch__light">
+                        <span class="switch__light-inner"></span>
+                    </span>
+                </span>
+                <p>Cocina</p>
+                <span class="sr">Light Switch</span>
+            </label>
+
+            <label>
+                <span class="switch">
+                    <input id="Breaker2" class="switch__input" type="checkbox" role="switch">
+                    <span class="switch__surface">
+                        <span class="switch__surface-glare"></span>
+                    </span>
+                    <span class="switch__inner-shadow"></span>
+                    <span class="switch__inner">
+                        <span class="switch__inner-glare"></span>
+                    </span>
+                    <span class="switch__rocker-shadow"></span>
+                    <span class="switch__rocker-sides">
+                        <span class="switch__rocker-sides-glare"></span>
+                    </span>
+                    <span class="switch__rocker">
+                        <span class="switch__rocker-glare"></span>
+                    </span>
+                    <span class="switch__light">
+                        <span class="switch__light-inner"></span>
+                    </span>
+                </span>
+                <p>Habitación</p>
+                <span class="sr">Light Switch</span>
+            </label>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/particle-api-js@8/dist/particle.min.js"></script>
+    <script src="act5xmc.js"></script>
+</body>
+</html>
