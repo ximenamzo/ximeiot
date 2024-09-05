@@ -1,17 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal IoT</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-    <h1>Bienvenido a la página principal</h1>
-    <p>Actividades IoT:</p>
-    <ul>
-      <li><a href="/a3">Actividad 3: Obtener variables de temperatura y humedad</a></li>
-      <li><a href="/a5">Actividad 5: Controlar LEDs con interruptores</a></li>
-      <li><a href="/a6">Actividad 6: Enviar datos a la nube</a></li>
-    </ul>
+
+<body class="bg-gray-100">
+  <div class="container mx-auto p-8">
+    <h1 class="text-4xl font-bold text-center mb-8">Bienvenido a la página principal</h1>
+    <p class="text-xl text-center mb-8">Actividades IoT:</p>
+
+    <div class="grid grid-cols-1 gap-8">
+
+      <!-- Actividad 3 -->
+      <div class="relative flex bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full flex-row">
+        <div class="p-12 w-4/5">
+          <h6
+            class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+            ACTIVIDAD 3
+          </h6>
+          <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+            Envio de datos a la nube de particle con particle.variable y Particle API JS (Javascript SDK)
+          </h4>
+          <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+            Uso del sensor DHT11 para obtener datos de temperatura y humedad de la tarjeta Particle Photon en tiempo real.
+          </p>
+          <a href="/a3" class="inline-block"><button
+              class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+              type="button">Ir a la página de visualización<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+              </svg></button></a>
+        </div>
+        <div
+          class="relative w-1/5 m-0 overflow-hidden text-gray-700 bg-white rounded-l-none bg-clip-border rounded-xl shrink-0">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+            alt="card-image" class="object-cover w-full h-full" />
+        </div>
+      </div>
+      
+      <!-- Actividad 5 -->
+      <div class="relative flex bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full flex-row">
+        <div class="p-12 w-4/5">
+          <h6
+            class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+            ACTIVIDAD 5
+          </h6>
+          <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+            Control de dispositivos Particle con particle.function y Particle API JS (Javascript SDK)
+          </h4>
+          <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+            Uso de funciones para enviar variables y cambiar el eswtado de los LEDs de la tarjeta Particle Photon.
+          </p>
+          <a href="/a5" class="inline-block"><button
+              class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+              type="button">Ir a la página de control<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+              </svg></button></a>
+        </div>
+        <div
+          class="relative w-1/5 m-0 overflow-hidden text-gray-700 bg-white rounded-l-none bg-clip-border rounded-xl shrink-0">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+            alt="card-image" class="object-cover w-full h-full" />
+        </div>
+      </div>
+
+
+
+      <!-- Actividad 6 -->
+      <div class="relative flex bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full flex-row">
+        <div class="p-12 w-4/5">
+          <h6
+            class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+            ACTIVIDAD 6
+          </h6>
+          <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+            Control de valores en un programa de particle con particle.function y Particle API JS (Javascript SDK)
+          </h4>
+          <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+            Envío de valores por medio de sliders hacia la consola de Particle.
+          </p>
+          <a href="/a6" class="inline-block"><button
+              class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none hover:bg-gray-900/10 active:bg-gray-900/20"
+              type="button">Ir a la página de control<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="2" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+              </svg></button></a>
+        </div>
+        <div
+          class="relative w-1/5 m-0 overflow-hidden text-gray-700 bg-white rounded-l-none bg-clip-border rounded-xl shrink-0">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
+            alt="card-image" class="object-cover w-full h-full" />
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
