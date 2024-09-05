@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    width: 300px;
+    margin: 10px;
+}
+h1 {
+    color: black;
+}
+#Temperatura, #Humedad {
+    font-size: 24px;
+    color: green;  /* Color verde para temperatura */
+    margin: 0;
+}
+#Humedad {
+    color: blue;  /* Color azul para humedad */
+}
+.label {
+    font-weight: bold;
+    font-size: 20px;
+}

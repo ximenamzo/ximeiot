@@ -1,53 +1,52 @@
-var particle = new Particle();
-var token;
+import Particle from "particle-api-js";
+const particle = new Particle();
+console.log(particle);
 
-// Iniciar sesión en Particle
-particle.login({ username: 'ximenamzo1994@gmail.com', password: 'P-XimeMzoCast357!*' }).then(
-    function(data) {
-        token = data.body.access_token;
-        console.log('Logged in successfully!');
-    },
-    function(err) {
-        console.log('Could not log in.', err);
-    }
-);
+// Obtener el token y el deviceId desde el servidor
+fetch('/api/get-token')
+  .then(response => response.json())
+  .then(function(data) {
+    const token = data.token;  // Se obtiene el token de la respuesta del servidor
+    const deviceId = data.deviceId;  // deviceId desde el servidor
+    console.log('Token obtenido:', token);
+    console.log('Device ID obtenido:', deviceId);
 
-// Función para controlar el LED con el interruptor
-document.getElementById('Breaker1').onchange = function() {
-    var estado = this.checked ? '1' : '0';
+    // Verificación adicional para asegurarse de que deviceId no es undefined
+    if (!deviceId) {
+        console.error("Error: deviceId es undefined");
+        return;
+      }
 
-    // Llamada a la función remota para controlar el LED 1
-    particle.callFunction({ 
-        deviceId: '190033000947313037363132', 
-        name: 'led',
-        argument: estado, 
-        auth: token 
-    }).then(
-        function(data) {
-            console.log('Function called successfully:', data);
-        },
-        function(err) {
-            console.log('An error occurred:', err);
-        }
-    );
-};
-
-// Función para controlar el LED con el interruptor
-document.getElementById('Breaker2').onchange = function() {
-    var estado = this.checked ? '1' : '0';
-
-    // Llamada a la función remota para controlar el LED 2
-    particle.callFunction({ 
-        deviceId: '190033000947313037363132', 
-        name: 'led2',
-        argument: estado, 
-        auth: token 
-    }).then(
-        function(data) {
-            console.log('Function called successfully:', data);
-        },
-        function(err) {
-            console.log('An error occurred:', err);
-        }
-    );
-};
+    // Función para controlar los LEDs
+    function controlLED(ledNumber, estado) {
+        const ledFunction = ledNumber === 1 ? 'led' : 'led2';  // Función remota dependiendo del LED
+        particle.callFunction({
+          deviceId: deviceId,
+          name: ledFunction,
+          argument: estado,
+          auth: token
+        }).then(
+          function(data) {
+            console.log(`Función ${ledNumber} llamada exitosamente:`, data);
+          },
+          function(err) {
+            console.log(`Error al llamar a la función ${ledNumber}:`, err);
+          }
+        );
+      }
+  
+      // Asignar los eventos a los interruptores (Breaker1 y Breaker2)
+      document.getElementById('Breaker1').onchange = function() {
+        const estado = this.checked ? '1' : '0';  // Determina si está encendido o apagado
+        controlLED(1, estado);  // Controla el LED 1
+      };
+  
+      document.getElementById('Breaker2').onchange = function() {
+        const estado = this.checked ? '1' : '0';  // Determina si está encendido o apagado
+        controlLED(2, estado);  // Controla el LED 2
+      };
+  
+    })
+    .catch(function(err) {
+      console.error('Error al obtener el token o deviceId:', err);
+    });
