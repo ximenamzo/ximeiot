@@ -1,36 +1,53 @@
 <!DOCTYPE html>
+<!-- Declara el documento HTML y el idioma "es" para español -->
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Control de TMS con Slider</title>
+  <!-- Establece el conjunto de caracteres del documento como UTF-8 -->
+  <meta charset="UTF-8"> 
+  <!-- Ajusta la escala para dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- Título de la página que aparece en la pestaña del navegador -->
+  <title>Control de TMS con Slider</title> 
+  <!-- Carga la librería Particle API JS desde un CDN para interactuar con dispositivos Particle -->
   <script src="https://cdn.jsdelivr.net/npm/particle-api-js@8/dist/particle.min.js"></script>
+  <!-- Carga el archivo CSS de Tailwind desde un CDN para aplicar estilos predefinidos -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+<!-- En el cuerpo se define el fondo gris claro y centra el contenido en la pantalla -->
 <body class="bg-gray-100 flex items-center justify-center h-screen">
-
+  <!-- Contenedor principal con estilos Tailwind para sombras, bordes redondeados, y un relleno (padding) -->
   <div class="bg-white shadow-md rounded-lg p-8 max-w-lg w-full">
+    <!-- Título centrado en la parte superior del contenedor -->
     <h1 class="text-2xl font-bold mb-4 text-center">Control de TMS</h1>
-
+    <!-- Etiqueta para el control deslizante (slider) -->
     <label for="Ktms" class="block text-lg font-semibold mb-2">Seleccione el valor de TMS:</label>
     
+    <!-- Contenedor para el slider con un valor mínimo y máximo a los lados -->
     <div class="flex items-center justify-between mb-4">
-      <span class="text-lg font-semibold text-gray-700">5</span> <!-- Valor mínimo -->
+      <!-- Valor mínimo (1) a la izquierda del slider -->
+      <span class="text-lg font-semibold text-gray-700">1</span>
+      <!-- Input tipo range (slider), con rango de 1 a 20, valor inicial 5 y un paso de 1 -->
       <input type="range" min="1" max="20" step="1" value="5" class="slider w-full mx-4" id="Ktms">
-      <span class="text-lg font-semibold text-gray-700">20</span> <!-- Valor máximo -->
+      <!-- Valor máximo (20) a la derecha del slider -->
+      <span class="text-lg font-semibold text-gray-700">20</span>
     </div>
     
+    <!-- Contenedor que muestra el valor seleccionado en el slider -->
     <div class="text-center">
+      <!-- Elemento <output> que muestra el valor actual del slider -->
       <output id="Kvaluetms" class="text-2xl font-bold text-red-500">5</output>
     </div>
 
+    <!-- Botón que envía el valor del slider a la tarjeta Particle al hacer clic -->
     <button id="applyTMS" class="mt-6 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
       Aplicar Valor
     </button>
 
+    <!-- Párrafo que mostrará mensajes de estado después de aplicar el valor, como si fue exitoso o hubo un error -->
     <p id="status" class="mt-4 text-center text-sm text-gray-600"></p>
   </div>
 
+  <!-- Carga el archivo de JavaScript generado por Webpack (act6xmc.bundle.js) para manejar la lógica del control -->
   <script src="../act6xmc.bundle.js"></script>
 </body>
 </html>
