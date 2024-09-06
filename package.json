@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "webpack",
+    "build": "webpack && npm run build:css",
     "build:css": "npx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
     "dev": "nodemon server.js",
     "lint": "eslint .",

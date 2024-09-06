@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de TMS con Slider</title>
+  <script src="https://cdn.jsdelivr.net/npm/particle-api-js@8/dist/particle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+  <div class="bg-white shadow-md rounded-lg p-8 max-w-lg w-full">
+    <h1 class="text-2xl font-bold mb-4 text-center">Control de TMS</h1>
+
+    <label for="Ktms" class="block text-lg font-semibold mb-2">Seleccione el valor de TMS:</label>
+    
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-lg font-semibold text-gray-700">5</span> <!-- Valor mínimo -->
+      <input type="range" min="1" max="20" step="1" value="5" class="slider w-full mx-4" id="Ktms">
+      <span class="text-lg font-semibold text-gray-700">20</span> <!-- Valor máximo -->
+    </div>
+    
+    <div class="text-center">
+      <output id="Kvaluetms" class="text-2xl font-bold text-red-500">5</output>
+    </div>
+
+    <button id="applyTMS" class="mt-6 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">
+      Aplicar Valor
+    </button>
+
+    <p id="status" class="mt-4 text-center text-sm text-gray-600"></p>
+  </div>
+
+  <script src="../act6xmc.bundle.js"></script>
+</body>
+</html>
